@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+</head>
+<body>
+
+<h2>Calculadora</h2>
+
+<label>Número 1:
+<input type="number" id="num1">
+</label>
+<br>
+
+<label>Número 2:
+<input type="number" id="num2">
+</label>
+
+<br><br>
+
+<button onclick="somar()">Somar</button>
+<button onclick="subtrair()">Subtrair</button>
+<button onclick="multiplicar()">Multiplicar</button>
+<button onclick="dividir()">Dividir</button>
+
+<p>Resultado: <span id="resultado"></span></p>
+
+<script>
+function pegarValores() {
+    let n1 = Number(document.getElementById("num1").value);
+    let n2 = Number(document.getElementById("num2").value);
+    return { n1, n2 };
+}
+
+function somar() {
+    let {n1, n2} = pegarValores();
+    document.getElementById("resultado").textContent = n1 + n2;
+}
+
+function subtrair() {
+    let {n1, n2} = pegarValores();
+    document.getElementById("resultado").textContent = n1 - n2;
+}
+
+function multiplicar() {
+    let {n1, n2} = pegarValores();
+    document.getElementById("resultado").textContent = n1 * n2;
+}
+
+function dividir() {
+    let {n1, n2} = pegarValores();
+    document.getElementById("resultado").textContent = n1 / n2;
+}
+</script>
+
+</body>
+</html>
